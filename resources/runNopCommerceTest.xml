@@ -2,7 +2,7 @@
 <suite name="NopCommerce">
   <test name="Run On Edge">
     <classes>
-      <class name="com.nopcommrce.user.User_01_Register_Login"/>
+      <class name="com.nopcommrce.user.User_01_Register"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
