@@ -6,15 +6,17 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class User_01_Register {
+public class Level_01_Register {
 	WebDriver driver;
 	String emailAddress;
 	String projectPath = System.getProperty("user.dir");
+	Actions action;
   @BeforeClass
   public void beforeClass() {
 	  System.setProperty("webdriver.edge.driver",projectPath+"\\browerDrivers\\msedgedriver.exe");
@@ -94,7 +96,7 @@ public class User_01_Register {
 	  driver.findElement(By.cssSelector("input#ConfirmPassword")).sendKeys("123");
 	  driver.findElement(By.cssSelector("button#register-button")).click();
 	  
-	  Assert.assertEquals(driver.findElement(By.cssSelector("span#Password-errori")).getText(),
+	  Assert.assertEquals(driver.findElement(By.cssSelector("span#Password-error")).getText(),
 			  "Password must meet the following rules:\nmust have at least 6 characters");
   }
   
