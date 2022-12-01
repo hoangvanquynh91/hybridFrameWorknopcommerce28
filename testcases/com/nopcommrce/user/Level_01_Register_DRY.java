@@ -40,7 +40,7 @@ public class Level_01_Register_DRY {
 	  
   }
   
-  @Test
+
   public void TC_02_Register_Invalid_Email() {
 	  driver.findElement(By.xpath("//a[@class=\"ico-register\"]")).click();
 	  driver.findElement(By.cssSelector("input#FirstName")).sendKeys("Automation");
@@ -55,7 +55,7 @@ public class Level_01_Register_DRY {
   }
   
   
-  @Test
+
   public void TC_03_Register_Success() {
 	  driver.findElement(By.xpath("//a[@class=\"ico-register\"]")).click();
 	  driver.findElement(By.cssSelector("input#FirstName")).sendKeys("Automation");
@@ -70,7 +70,7 @@ public class Level_01_Register_DRY {
 	  driver.findElement(By.cssSelector("a.ico-logout")).click();
   }
   
-  @Test
+
   public void TC_04_Register_Existing_Email() {
 	  driver.findElement(By.xpath("//a[@class=\"ico-register\"]")).click();
 	  driver.findElement(By.cssSelector("input#FirstName")).sendKeys("Automation");
@@ -86,7 +86,7 @@ public class Level_01_Register_DRY {
 	  
   }
   
-  @Test
+
   public void TC_05_Register_Password_Less_Than_6_Chars() {
 	  driver.findElement(By.xpath("//a[@class=\"ico-register\"]")).click();
 	  driver.findElement(By.cssSelector("input#FirstName")).sendKeys("Automation");
@@ -100,7 +100,7 @@ public class Level_01_Register_DRY {
 			  "Password must meet the following rules:\nmust have at least 6 characters");
   }
   
-  @Test
+
   public void TC_06_Register_Invalid_Confirm_Password() {
 	  driver.findElement(By.xpath("//a[@class=\"ico-register\"]")).click();
 	  driver.findElement(By.cssSelector("input#FirstName")).sendKeys("Automation");

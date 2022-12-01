@@ -104,20 +104,20 @@ public class BasePage {
     	driver.switchTo().window(parentID);
     }
     
-    public By getByxpath(String xpathLocator) {
+    private By getByxpath(String xpathLocator) {
     	return By.xpath(xpathLocator);
     }
     
-    public WebElement getWebElement(WebDriver driver,String xpathLocator) {
+    private WebElement getWebElement(WebDriver driver,String xpathLocator) {
     	return driver.findElement(By.xpath(xpathLocator));
     }
-    public List<WebElement> getListWebElement(WebDriver driver,String xpathLocator) {
+    private List<WebElement> getListWebElement(WebDriver driver,String xpathLocator) {
     	return driver.findElements(getByxpath(xpathLocator));
     	
     }
     
     public void clickToElement(WebDriver driver,String xpathLocator) {
-    	getWebElement(driver,xpathLocator).click();;
+    	getWebElement(driver,xpathLocator).click();
     }
     public void senkeyToElement(WebDriver driver,String xpathLocator, String textValue) {
     	WebElement element = getWebElement(driver,xpathLocator);
