@@ -2,22 +2,9 @@
 <suite name="NopCommerce">
   <test name="Run On Edge">
     <classes>
-    <parameter name = "browser" value = "edge"/>
-      <class name="javaBasic.Topic_07_Switch_Case"/>
+    
+      <class name="com.nopcommrce.user.Level_03_Pase_Object_02_Login"/>
     </classes>
   </test> <!-- Test -->
   
-  <test name="Run On Firefox">
-    <classes>
-    <parameter name = "browser" value = "firefox"/>
-      <class name="javaBasic.Topic_07_Switch_Case"/>
-    </classes>
-  </test> <!-- Test -->
-  
-  <test name="Run On Chrome">
-    <classes>
-    <parameter name = "browser" value = "chrome"/>
-      <class name="javaBasic.Topic_07_Switch_Case"/>
-    </classes>
-  </test> <!-- Test -->
 </suite> <!-- Suite -->
