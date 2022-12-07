@@ -26,7 +26,6 @@ public class Level_01_Register_DRY {
 	  driver.get("https://demo.nopcommerce.com/");
   }
 
-  
   @Test
   public void TC_01_Register_Empty_Data() {
 	  driver.findElement(By.xpath("//a[@class=\"ico-register\"]")).click();
@@ -50,11 +49,7 @@ public class Level_01_Register_DRY {
 	  driver.findElement(By.cssSelector("input#ConfirmPassword")).sendKeys("123456");
 	  driver.findElement(By.cssSelector("button#register-button")).click();
 	  Assert.assertEquals(driver.findElement(By.cssSelector("span#Email-error")).getText(), "Wrong email");
-	  
-	  
   }
-  
-  
 
   public void TC_03_Register_Success() {
 	  driver.findElement(By.xpath("//a[@class=\"ico-register\"]")).click();
@@ -80,10 +75,7 @@ public class Level_01_Register_DRY {
 	  driver.findElement(By.cssSelector("input#ConfirmPassword")).sendKeys("123456");
 	  driver.findElement(By.cssSelector("button#register-button")).click();
 	  
-	  Assert.assertEquals(driver.findElement(By.cssSelector("div.validation-summary-errors  li")).getText(), "The specified email already exists");
-	  
-	  
-	  
+	  Assert.assertEquals(driver.findElement(By.cssSelector("div.validation-summary-errors  li")).getText(), "The specified email already exists"); 
   }
   
 
