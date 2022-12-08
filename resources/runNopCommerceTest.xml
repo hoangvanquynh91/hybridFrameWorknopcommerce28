@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="NopCommerce">
-  <test name="Run On Edge">
+  <test name="Run On Firefox">
+  <parameter name = "browser" value = "firefox"/>
     <classes>
-      <class name="com.nopcommrce.user.Level_03_Pase_Object_02_Login"/>
+      <class name="com.nopcommrce.user.Level_04_Multiple_Brower"/>
+    </classes>
+  </test>
+   <test name="Run On Edge">
+  <parameter name = "browser" value = "edge"/>
+    <classes>
+      <class name="com.nopcommrce.user.Level_04_Multiple_Brower"/>
+    </classes>
+  </test>
+   <test name="Run On chrome">
+  <parameter name = "browser" value = "chrome"/>
+    <classes>
+      <class name="com.nopcommrce.user.Level_04_Multiple_Brower"/>
     </classes>
   </test>
 </suite>
