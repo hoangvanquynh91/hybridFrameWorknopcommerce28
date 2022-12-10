@@ -11,6 +11,4 @@ private WebDriver driver;
 		this.driver = driver;
 	}
 	private WebElement REGISTER_LINK;
-	
-
 }
