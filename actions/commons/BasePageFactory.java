@@ -15,10 +15,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BasePage {
+public class BasePageFactory {
 	
-	public static BasePage getBasePageObject() {
-		return new BasePage();
+	public static BasePageFactory getBasePageObject() {
+		return new BasePageFactory();
 	}
 	//Mở 1 URL
 	//Common fuction
@@ -56,7 +56,6 @@ public class BasePage {
 	protected void cancelAlert(WebDriver driver) {
 		waitForAlertPresence(driver).dismiss();
 	}
-	
 	protected String getAlertText(WebDriver driver) {
 		return waitForAlertPresence(driver).getText();
 	}
@@ -266,25 +265,25 @@ public class BasePage {
 			return false;
 		}
 	}
-	protected void waitForElementVisble(WebDriver driver,String xpathLocator) {
+	protected void waitForElementVisble(WebDriver driver,WebElement element) {
 		WebDriverWait explicitWait = new WebDriverWait(driver,20);
-		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator)));
+		explicitWait.until(ExpectedConditions.visibilityOf(element));
 	}
-	protected void waitForAllElementVisible(WebDriver driver,String xpathLocator) {
+	protected void waitForAllElementVisible(WebDriver driver,List<WebElement> listElement) {
 		WebDriverWait explicitWait = new WebDriverWait(driver,20);
-		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(xpathLocator)));
+		explicitWait.until(ExpectedConditions.visibilityOfAllElements(listElement));
 	}
-	protected void waitForElementInVisble(WebDriver driver,String xpathLocator) {
+	protected void waitForElementInVisble(WebDriver driver,WebElement element) {
 		WebDriverWait explicitWait = new WebDriverWait(driver,20);
-		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpathLocator)));
+		explicitWait.until(ExpectedConditions.invisibilityOf(element));
 	}
-	protected void waitForAllElementInVisible(WebDriver driver,String xpathLocator) {
+	protected void waitForAllElementInVisible(WebDriver driver,List<WebElement> listElement) {
 		WebDriverWait explicitWait = new WebDriverWait(driver,20);
-		explicitWait.until(ExpectedConditions.invisibilityOfAllElements(getListWebElement(driver, xpathLocator)));
+		explicitWait.until(ExpectedConditions.invisibilityOfAllElements(listElement));
 	}
 	
-	protected void waitToElementClickable(WebDriver driver,String xpathLocator) {
+	protected void waitToElementClickable(WebDriver driver,WebElement element) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
-		explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathLocator)));
+		explicitWait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 }
