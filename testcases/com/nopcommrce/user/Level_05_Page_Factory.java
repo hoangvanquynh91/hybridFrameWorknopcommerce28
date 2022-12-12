@@ -3,21 +3,18 @@ package com.nopcommrce.user;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import commons.BasePage;
 import commons.BaseTest;
 import pageFactory.HomePageObject;
+import pageFactory.LoginPageObject;
 import pageFactory.RegisterPageObject;
-import pageObjects.LoginPageObject;
+
 
 
 public class Level_05_Page_Factory extends BaseTest{
@@ -40,8 +37,6 @@ public class Level_05_Page_Factory extends BaseTest{
       password = "123456";
       incorrectPassword = "987654";
 	  
-	  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	  driver.get("https://demo.nopcommerce.com/");
 	  System.out.println("Register_03 - Step 1 : Click to register link");
 	  homePage.clickToRegisterLink();
 	  registerPage = new RegisterPageObject(driver);
