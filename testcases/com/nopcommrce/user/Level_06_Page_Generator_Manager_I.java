@@ -1,30 +1,29 @@
 package com.nopcommrce.user;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import commons.BaseTest;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Level_03_Pase_Object_02_Login {
+public class Level_06_Page_Generator_Manager_I extends BaseTest{
       private WebDriver driver;
 	  private String firstName,lastName ,exitingEmail,invalidEmail,notFoundEmail,password,incorrectPassword;
-	  private String projectPath = System.getProperty("user.dir");
 	  private HomePageObject homePage;
 	  private RegisterPageObject registerPage;
 	  private LoginPageObject loginPage;
+  @Parameters("browser")
   @BeforeClass
-  public void beforeClass() {
-	  System.setProperty("webdriver.edge.driver",projectPath+"\\browerDrivers\\msedgedriver.exe");
-	  driver = new EdgeDriver();
+  public void beforeClass(String browserName) {
+	  driver = getBrowserDriver(browserName);
 	  
 	  firstName = "Automation";
 	  lastName = "FC";
@@ -34,8 +33,6 @@ public class Level_03_Pase_Object_02_Login {
       password = "123456";
       incorrectPassword = "987654";
 	  
-	  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	  driver.get("https://demo.nopcommerce.com/");
 	  homePage = new HomePageObject(driver);
 	  System.out.println("Register_03 - Step 1 : Click to register link");
 	  homePage.clickToRegisterLink();
@@ -128,11 +125,6 @@ public class Level_03_Pase_Object_02_Login {
 	  homePage = new HomePageObject(driver);
 	  Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 	  
-  }
-  
-  public int generaterFakeNumber() {
-	  Random ran = new Random();
-	  return ran.nextInt(9999);
   }
   
   @AfterClass

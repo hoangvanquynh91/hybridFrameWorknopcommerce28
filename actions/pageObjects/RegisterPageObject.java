@@ -89,10 +89,14 @@ public class RegisterPageObject extends BasePage{
 		return getElementText(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE);
 	}
 
-	public void clickToLogoutLink() {
+	public HomePageObject clickToLogoutLink() {
 		// TODO Auto-generated method stub
 		waitToElementClickable(driver, RegisterPageUI.LOGOUT_LINK);
 		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
+		//2
+		//return new HomePageObject(driver);
+		//3
+		return PageGeneratorManager.getHomePage(driver);
 		
 	}
 
