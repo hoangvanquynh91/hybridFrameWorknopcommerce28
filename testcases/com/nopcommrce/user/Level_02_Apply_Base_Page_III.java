@@ -50,11 +50,11 @@ public class Level_02_Apply_Base_Page_III extends BasePage {
   public void TC_02_Register_Invalid_Email() {
 	  waitToElementClickable(driver, "//a[@class='ico-register']");
 	  clickToElement(driver, "//a[@class='ico-register']");
-	  senkeyToElement(driver, "//input[@id='FirstName']", "Automation");
-	  senkeyToElement(driver, "//input[@id='LastName']", "FC");
-	  senkeyToElement(driver, "//input[@id='Email']", "12346#9852@$aufhsaf$$$hsa");
-	  senkeyToElement(driver, "//input[@id='Password']", "123456");
-	  senkeyToElement(driver, "//input[@id='ConfirmPassword']", "123456");
+	  sendkeyToElement(driver, "//input[@id='FirstName']", "Automation");
+	  sendkeyToElement(driver, "//input[@id='LastName']", "FC");
+	  sendkeyToElement(driver, "//input[@id='Email']", "12346#9852@$aufhsaf$$$hsa");
+	  sendkeyToElement(driver, "//input[@id='Password']", "123456");
+	  sendkeyToElement(driver, "//input[@id='ConfirmPassword']", "123456");
 
 	  waitToElementClickable(driver, "//button[@id='register-button']");
 	  clickToElement(driver, "//button[@id='register-button']");
@@ -70,11 +70,11 @@ public class Level_02_Apply_Base_Page_III extends BasePage {
 	  waitToElementClickable(driver, "//a[@class='ico-register']");
 	  clickToElement(driver, "//a[@class='ico-register']");
 	  
-	  senkeyToElement(driver, "//input[@id='FirstName']", "Automation");
-	  senkeyToElement(driver, "//input[@id='LastName']", "FC");
-	  senkeyToElement(driver, "//input[@id='Email']", emailAddress);
-	  senkeyToElement(driver, "//input[@id='Password']", "123456");
-	  senkeyToElement(driver, "//input[@id='ConfirmPassword']", "123456");
+	  sendkeyToElement(driver, "//input[@id='FirstName']", "Automation");
+	  sendkeyToElement(driver, "//input[@id='LastName']", "FC");
+	  sendkeyToElement(driver, "//input[@id='Email']", emailAddress);
+	  sendkeyToElement(driver, "//input[@id='Password']", "123456");
+	  sendkeyToElement(driver, "//input[@id='ConfirmPassword']", "123456");
 	  
 	  waitToElementClickable(driver, "//button[@id='register-button']");
 	  driver.findElement(By.cssSelector("button#register-button")).click();
@@ -91,11 +91,11 @@ public class Level_02_Apply_Base_Page_III extends BasePage {
 	  waitToElementClickable(driver, "//a[@class='ico-register']");
 	  clickToElement(driver, "//a[@class='ico-register']");
 	  
-	  senkeyToElement(driver, "//input[@id='FirstName']", "Automation");
-	  senkeyToElement(driver, "//input[@id='LastName']", "FC");
-	  senkeyToElement(driver, "//input[@id='Email']", emailAddress);
-	  senkeyToElement(driver, "//input[@id='Password']", "123456");
-	  senkeyToElement(driver, "//input[@id='ConfirmPassword']", "123456");
+	  sendkeyToElement(driver, "//input[@id='FirstName']", "Automation");
+	  sendkeyToElement(driver, "//input[@id='LastName']", "FC");
+	  sendkeyToElement(driver, "//input[@id='Email']", emailAddress);
+	  sendkeyToElement(driver, "//input[@id='Password']", "123456");
+	  sendkeyToElement(driver, "//input[@id='ConfirmPassword']", "123456");
 	 
 	  waitToElementClickable(driver, "//button[@id='register-button']");
 	  clickToElement(driver, "//button[@id='register-button']");
@@ -111,11 +111,11 @@ public class Level_02_Apply_Base_Page_III extends BasePage {
 	  waitToElementClickable(driver, "//a[@class='ico-register']");
 	  clickToElement(driver, "//a[@class='ico-register']");
 	  
-	  senkeyToElement(driver, "//input[@id='FirstName']", "Automation");
-	  senkeyToElement(driver, "//input[@id='LastName']", "FC");
-	  senkeyToElement(driver, "//input[@id='Email']", emailAddress);
-	  senkeyToElement(driver, "//input[@id='Password']", "123");
-	  senkeyToElement(driver, "//input[@id='ConfirmPassword']", "123");
+	  sendkeyToElement(driver, "//input[@id='FirstName']", "Automation");
+	  sendkeyToElement(driver, "//input[@id='LastName']", "FC");
+	  sendkeyToElement(driver, "//input[@id='Email']", emailAddress);
+	  sendkeyToElement(driver, "//input[@id='Password']", "123");
+	  sendkeyToElement(driver, "//input[@id='ConfirmPassword']", "123");
 
 	  
 	  waitToElementClickable(driver, "//button[@id='register-button']");
@@ -130,11 +130,11 @@ public class Level_02_Apply_Base_Page_III extends BasePage {
 	  waitToElementClickable(driver, "//a[@class='ico-register']");
 	  clickToElement(driver, "//a[@class='ico-register']");
 	  
-	  senkeyToElement(driver, "//input[@id='FirstName']", "Automation");
-	  senkeyToElement(driver, "//input[@id='LastName']", "FC");
-	  senkeyToElement(driver, "//input[@id='Email']", emailAddress);
-	  senkeyToElement(driver, "//input[@id='Password']", "123456");
-	  senkeyToElement(driver, "//input[@id='ConfirmPassword']", "654321");
+	  sendkeyToElement(driver, "//input[@id='FirstName']", "Automation");
+	  sendkeyToElement(driver, "//input[@id='LastName']", "FC");
+	  sendkeyToElement(driver, "//input[@id='Email']", emailAddress);
+	  sendkeyToElement(driver, "//input[@id='Password']", "123456");
+	  sendkeyToElement(driver, "//input[@id='ConfirmPassword']", "654321");
 	  
 	  waitToElementClickable(driver, "//button[@id='register-button']");
 	  clickToElement(driver, "//button[@id='register-button']");

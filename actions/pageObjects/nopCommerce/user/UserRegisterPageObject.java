@@ -1,15 +1,16 @@
-package pageObjects;
+package pageObjects.nopCommerce.user;
 
 import org.openqa.selenium.WebDriver;
 
-import PageUI.RegisterPageUI;
+import PageUIs.nopCommerce.user.RegisterPageUI;
 import commons.BasePage;
+import commons.PageGeneratorManager;
 
-public class RegisterPageObject extends BasePage{
+public class UserRegisterPageObject extends BasePage{
 	private WebDriver driver;
 	
 	
-	public RegisterPageObject(WebDriver driver) {
+	public UserRegisterPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
@@ -51,35 +52,35 @@ public class RegisterPageObject extends BasePage{
 	public void inputToFirstNameTextBox(String firstName) {
 		// TODO Auto-generated method stub
 		waitForElementVisble(driver, RegisterPageUI.FIRST_NAME_TEXTBOX);
-		senkeyToElement(driver, RegisterPageUI.FIRST_NAME_TEXTBOX, firstName);
+		sendkeyToElement(driver, RegisterPageUI.FIRST_NAME_TEXTBOX, firstName);
 		
 	}
 
 	public void inputToLastNameTextBox(String lastName) {
 		// TODO Auto-generated method stub
 		waitForElementVisble(driver, RegisterPageUI.LAST_NAME_TEXTBOX);
-		senkeyToElement(driver, RegisterPageUI.LAST_NAME_TEXTBOX, lastName);
+		sendkeyToElement(driver, RegisterPageUI.LAST_NAME_TEXTBOX, lastName);
 		
 	}
 
 	public void inputToEmailextBox(String email) {
 		// TODO Auto-generated method stub
 		waitForElementVisble(driver, RegisterPageUI.EMAIl_TEXTBOX);
-		senkeyToElement(driver, RegisterPageUI.EMAIl_TEXTBOX, email);
+		sendkeyToElement(driver, RegisterPageUI.EMAIl_TEXTBOX, email);
 		
 	}
 
 	public void inputToPasswordTextBox(String password) {
 		// TODO Auto-generated method stub
 		waitForElementVisble(driver, RegisterPageUI.PASSWORRD_TEXTBOX);
-		senkeyToElement(driver, RegisterPageUI.PASSWORRD_TEXTBOX, password);
+		sendkeyToElement(driver, RegisterPageUI.PASSWORRD_TEXTBOX, password);
 		
 	}
 
 	public void inputToConfirmPasswordTextBox(String confrimPassword) {
 		// TODO Auto-generated method stub
 		waitForElementVisble(driver, RegisterPageUI.CONFIRM_PASSWORRD_TEXTBOX);
-		senkeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORRD_TEXTBOX, confrimPassword);
+		sendkeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORRD_TEXTBOX, confrimPassword);
 		
 	}
 
@@ -89,14 +90,14 @@ public class RegisterPageObject extends BasePage{
 		return getElementText(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE);
 	}
 
-	public HomePageObject clickToLogoutLink() {
+	public UserHomePageObject clickToLogoutLink() {
 		// TODO Auto-generated method stub
 		waitToElementClickable(driver, RegisterPageUI.LOGOUT_LINK);
 		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
 		//2
 		//return new HomePageObject(driver);
 		//3
-		return PageGeneratorManager.getHomePage(driver);
+		return PageGeneratorManager.getUserHomePage(driver);
 		
 	}
 

@@ -1,19 +1,20 @@
-package pageObjects;
+package pageObjects.nopCommerce.user;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import PageUI.LoginPageUI;
+import PageUIs.nopCommerce.user.LoginPageUI;
 import commons.BasePage;
+import commons.PageGeneratorManager;
 
-public class LoginPageObject extends BasePage {
+public class UserLoginPageObject extends BasePage {
 	private WebDriver driver;
 	private WebDriverWait explicitWait;
 
-	public LoginPageObject(WebDriver driver) {
+	public UserLoginPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
-	public LoginPageObject(WebDriver driver, WebDriverWait explicitWait) {
+	public UserLoginPageObject(WebDriver driver, WebDriverWait explicitWait) {
 		this.driver = driver;
 		this.explicitWait = explicitWait;
 	}
@@ -26,28 +27,31 @@ public class LoginPageObject extends BasePage {
 	public void inputToEmailTextBox(String emailAddress) {
 		// TODO Auto-generated method stub
 		waitForElementVisble(driver, LoginPageUI.EMAIL_TEXT_BOX);
-		senkeyToElement(driver, LoginPageUI.EMAIL_TEXT_BOX, emailAddress);
+		sendkeyToElement(driver, LoginPageUI.EMAIL_TEXT_BOX, emailAddress);
 		
 	}
 
-	public void clickToLoginButton() {
+	public UserHomePageObject clickToLoginButton() {
 		waitToElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-		
+		return PageGeneratorManager.getUserHomePage(driver);
 	}
 
 	public String getErrorMessageUnsuccessfull() {
-		// TODO Auto-generated method stub
 		return getElementText(driver, LoginPageUI.ERROR_MESSAGE_UNSUCCESSFUL);
 	}
 
 	public void inputToPasswordTextBox(String password) {
-		// TODO Auto-generated method stub
 		waitForElementVisble(driver, LoginPageUI.PASSWORD_TEXT_BOX);
-		senkeyToElement(driver, LoginPageUI.PASSWORD_TEXT_BOX, password);
+		sendkeyToElement(driver, LoginPageUI.PASSWORD_TEXT_BOX, password);
 		
 	}
-
+	public UserHomePageObject loginAsUser(String emailAddress, String password) {
+		// TODO Auto-generated method stub
+		inputToEmailTextBox(emailAddress);
+		inputToPasswordTextBox(password);
+		return clickToLoginButton();
+		
+	}
 	
-
 }
