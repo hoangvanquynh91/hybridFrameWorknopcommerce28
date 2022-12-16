@@ -106,7 +106,7 @@ public class Level_07_Switch_Page extends BaseTest{
   
   @AfterClass
   public void afterClass() {
-	  //driver.quit();
+	  driver.quit();
   }
   
   
