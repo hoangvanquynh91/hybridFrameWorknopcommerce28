@@ -100,6 +100,16 @@ public class UserRegisterPageObject extends BasePage{
 		return PageGeneratorManager.getUserHomePage(driver);
 		
 	}
+	public UserHomePageObject clickToLoginLink() {
+		// TODO Auto-generated method stub
+		waitToElementClickable(driver, RegisterPageUI.LOGIN_LINK);
+		clickToElement(driver, RegisterPageUI.LOGIN_LINK);
+		//2
+		//return new HomePageObject(driver);
+		//3
+		return PageGeneratorManager.getUserHomePage(driver);
+		
+	}
 
 	public String getErrorMessageExitingEmail() {
 		// TODO Auto-generated method stub
