@@ -1,6 +1,7 @@
 package com.jquery.datatable;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -17,23 +18,28 @@ public class Level_10_DataTable_DataGrid extends BaseTest{
   @Parameters({"browser","url"})
   @BeforeClass
   public void beforeClass(String browserName, String appUrl) {
-	  driver = getBrowserDriverJQuery(browserName, appUrl);
+	  driver = getBrowserDriverJQueryID(browserName, appUrl);
 	  homePage = PageGeneratorManager.getHomePage(driver);
   }
   @Test
   public void Table_01_Paging (){
 	  homePage.openPageByNumber("1");
-	  sleepInSecond(3);
+	  sleepInSecond(1);
+	  Assert.assertTrue(homePage.isPageNumberActive("1"));
 	  homePage.openPageByNumber("5");
-	  sleepInSecond(3);
+	  sleepInSecond(1);
+	  Assert.assertTrue(homePage.isPageNumberActive("5"));
 	  homePage.openPageByNumber("7");
-	  sleepInSecond(3);
+	  sleepInSecond(1);
+	  Assert.assertTrue(homePage.isPageNumberActive("7"));
 	  homePage.openPageByNumber("8");
-	  sleepInSecond(3);
+	  sleepInSecond(1);
+	  Assert.assertTrue(homePage.isPageNumberActive("8"));
 	  homePage.openPageByNumber("10");
-	  sleepInSecond(3);
+	  sleepInSecond(1);
+	  Assert.assertTrue(homePage.isPageNumberActive("15"));
 	  homePage.openPageByNumber("1");
-	  sleepInSecond(3);
+	  sleepInSecond(1);
 	 
   }
   @Test
@@ -47,8 +53,11 @@ public class Level_10_DataTable_DataGrid extends BaseTest{
 	  sleepInSecond(3);
 	  homePage.enterToHeaderTextBoxByLabel("Total","1504");
 	  sleepInSecond(3);
-	  
-	  
+  }
+  
+  @Test
+  public void Table_03_Enter_Header () { 
+	  homePage.getValueEachRowAtAllPage();
   }
   
   public void sleepInSecond (long timeSecond) {

@@ -33,7 +33,7 @@ public class Level_07_Switch_Page extends BaseTest{
   @Parameters("browser")
   @BeforeClass
   public void beforeClass(String browserName) {
-	  driver = getBrowserDriver(browserName);
+	  driver = getBrowserDriverID(browserName);
 	  firstName = "Automation";
 	  lastName = "FC";
       emailAddress = "afc" + generaterFakeNumber()+"@hotmail.vn";

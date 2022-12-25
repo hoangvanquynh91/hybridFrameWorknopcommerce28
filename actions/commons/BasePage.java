@@ -6,6 +6,7 @@ import java.util.Set;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -140,7 +141,7 @@ public class BasePage {
     private WebElement getWebElement(WebDriver driver,String locator) {
     	return driver.findElement(getByLocator(locator));
     }
-    private List<WebElement> getListWebElement(WebDriver driver,String locator) {
+    public List<WebElement> getListWebElement(WebDriver driver,String locator) {
     	return driver.findElements(getByLocator(locator));
     	
     }
@@ -242,6 +243,9 @@ public class BasePage {
 			element.click();
 		}
 	}
+	public boolean isElementDisplay(WebDriver driver,String dynamicLocator, String value) {
+		return getWebElement(driver, getDynamicXpath(dynamicLocator, value)).isDisplayed();
+	}
 	public boolean isElementDisplay(WebDriver driver,String locator) {
 		return getWebElement(driver, locator).isDisplayed();
 	}
@@ -263,6 +267,15 @@ public class BasePage {
     	Actions action = new Actions(driver);
     	action.moveToElement(getWebElement(driver, locator)).perform();
     }
+    public void pressKeyToElement(WebDriver driver,String locator, Keys key) {
+    	Actions action = new Actions(driver);
+    	action.sendKeys(getWebElement(driver, locator),key).perform();
+    }
+    public void pressKeyToElement(WebDriver driver,String locator, Keys key, String...dynamicValue ) {
+    	Actions action = new Actions(driver);
+    	action.sendKeys(getWebElement(driver, getDynamicXpath(locator, dynamicValue)),key).perform();
+    }
+    
 	public void scrollToBottomPage(WebDriver driver) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");

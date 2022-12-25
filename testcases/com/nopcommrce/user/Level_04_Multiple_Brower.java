@@ -22,7 +22,7 @@ public class Level_04_Multiple_Brower extends BaseTest {
   @Parameters("browser")
   @BeforeClass
   public void beforeClass(String browserName) {
-	  driver = getBrowserDriver(browserName);
+	  driver = getBrowserDriverID(browserName);
 	  firstName = "Automation";
 	  lastName = "FC";
       emailAddress = "afc" + generaterFakeNumber()+"@hotmail.vn";

@@ -35,7 +35,7 @@ public class Level_08_Switch_Role extends BaseTest{
   @Parameters("browser")
   @BeforeClass
   public void beforeClass(String browserName) {
-	  driver = getBrowserDriver(browserName);
+	  driver = getBrowserDriverID(browserName);
 	  userHomePage = PageGeneratorManager.getUserHomePage(driver);
 	  adminEmailAddress = "admin@yourstore.com";
 	  adminPassword = "admin";

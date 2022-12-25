@@ -15,7 +15,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 	private String projectPath = System.getProperty("user.dir");
 	private WebDriver driver;
-	protected WebDriver getBrowserDriver(String browserName) {
+	
+	protected WebDriver getBrowserDriverID(String browserName) {
+		return getBrowserDriver(browserName);
+	}
+	
+	protected WebDriver getBrowserDriverJQueryID(String browserName, String appURL) {
+		return getBrowserDriverJQuery(browserName,appURL);
+	}
+	
+	private WebDriver getBrowserDriver(String browserName) {
 		//Gọi đến khởi tạo driver tương ứng với browser name
 		  if(browserName.equals("edge")) {
 			  //System.setProperty("webdriver.edge.driver",projectPath+"\\browerDrivers\\msedgedriver.exe");
@@ -55,7 +64,7 @@ public class BaseTest {
 		  driver.get(GlobalConstants.USER_PAGE_URL);
 		  return driver;
 	}
-	protected WebDriver getBrowserDriverJQuery(String browserName, String appURL) {
+	private WebDriver getBrowserDriverJQuery(String browserName, String appURL) {
 		//Gọi đến khởi tạo driver tương ứng với browser name
 		  if(browserName.equals("edge")) {
 			  //System.setProperty("webdriver.edge.driver",projectPath+"\\browerDrivers\\msedgedriver.exe");
