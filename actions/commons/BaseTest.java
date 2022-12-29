@@ -13,7 +13,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
-	private String projectPath = System.getProperty("user.dir");
+	//private String projectPath = System.getProperty("user.dir");
 	private WebDriver driver;
 	
 	protected WebDriver getBrowserDriverID(String browserName) {

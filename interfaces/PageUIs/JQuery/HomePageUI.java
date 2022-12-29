@@ -7,6 +7,4 @@ public class HomePageUI {
 	public static final String TOTAL_PAGINATION = "xpath=//ul[@class='qgrd-pagination-ul']/li";
 	public static final String PAGINATION_INDEX = "xpath=//ul[@class='qgrd-pagination-ul']/li[@class='qgrd-pagination-page'][%s]/a";
 	public static final String ALL_ROW_EACH_PAGE = "xpath=//tbody/tr";
-	
-
 }
