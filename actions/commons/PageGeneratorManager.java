@@ -2,6 +2,7 @@ package commons;
 
 import org.openqa.selenium.WebDriver;
 
+import PageUIs.JQuery.NopHomePageUI;
 import pageObjects.noCommerce.admin.AdminDashboardPageObjects;
 import pageObjects.noCommerce.admin.AdminLoginPageObject;
 import pageObjects.nopCommerce.user.UserAddressPageObJect;
@@ -65,6 +66,7 @@ public class PageGeneratorManager {
 	public static AdminDashboardPageObjects getAdminDashboardPage(WebDriver driver) {
 		return new AdminDashboardPageObjects(driver);
 	}
+	
 	
 	
 	

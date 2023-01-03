@@ -165,12 +165,12 @@ public class BasePage {
     }
     public void selectItemInDefaultDropdown(WebDriver driver,String locator, String textItem) {
     	Select select = new Select(getWebElement(driver,locator));
-    	select.selectByValue(textItem);
+    	select.selectByVisibleText(textItem);
     }
 
     public void selectItemInDefaultDropdown(WebDriver driver,String locator, String textItem, String... dynamicValues) {
     	Select select = new Select(getWebElement(driver,getDynamicXpath(locator, dynamicValues)));
-    	select.selectByValue(textItem);
+    	select.selectByVisibleText(textItem);
     }
     
     public String getSelectedItemDefaultDropDown(WebDriver driver,String locator) {
@@ -239,6 +239,18 @@ public class BasePage {
 	}
 	public void uncheckToDefaultCheckBox(WebDriver driver,String locator) {
 		WebElement element = getWebElement(driver, locator);
+		if(element.isSelected()) {
+			element.click();
+		}
+	}
+	public void checkToDefaultCheckBoxRadioButton(WebDriver driver,String locator, String... dynamicValues) {
+		WebElement element = getWebElement(driver, getDynamicXpath(locator, dynamicValues));
+		if(!element.isSelected()) {
+			element.click();
+		}
+	}
+	public void uncheckToDefaultCheckBox(WebDriver driver,String locator, String... dynamicValues) {
+		WebElement element = getWebElement(driver, getDynamicXpath(locator, dynamicValues));
 		if(element.isSelected()) {
 			element.click();
 		}
