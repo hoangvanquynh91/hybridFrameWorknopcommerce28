@@ -2,7 +2,7 @@ package commons;
 
 import org.openqa.selenium.WebDriver;
 
-import PageUIs.JQuery.NopHomePageUI;
+import nopCommerceDataTableUI.NopHomePageUI;
 import pageObjects.noCommerce.admin.AdminDashboardPageObjects;
 import pageObjects.noCommerce.admin.AdminLoginPageObject;
 import pageObjects.nopCommerce.user.UserAddressPageObJect;

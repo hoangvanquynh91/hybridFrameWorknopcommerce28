@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import PageUIs.nopCommerce.user.BasePageUI;
+import pageObjects.jQuery.uploadFileUI.BasePageJQueryUI;
 import pageObjects.noCommerce.admin.AdminLoginPageObject;
 import pageObjects.nopCommerce.user.UserAddressPageObJect;
 import pageObjects.nopCommerce.user.UserBackInStockSubscriptonsPageObjects;
@@ -352,6 +353,20 @@ public class BasePage {
 			return false;
 		}
 	}
+	
+	public boolean isImageLoaded(WebDriver driver, String locator, String...dynamicLocator) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", getWebElement(driver, getDynamicXpath(locator, dynamicLocator)));
+		if (status) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	
+	
+	
 	public void waitForElementVisble(WebDriver driver,String locator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver,20);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
@@ -394,6 +409,20 @@ public class BasePage {
 		WebDriverWait explicitWait = new WebDriverWait(driver, 30);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(getDynamicXpath(locator, dynamicLocator))));
 	}
+	
+	public void uploadMutipleFiles(WebDriver driver, String...fileName) {
+		// Đường dẫn của thư mục updaload file
+		String filePath = GlobalConstants.UPLOAD_FILE_FOLDER;
+		String fullFileName = "";
+		for (String file: fileName) {
+			fullFileName = fullFileName +filePath + file + "\n";
+		}
+		fullFileName = fullFileName.trim();
+		getWebElement(driver, BasePageJQueryUI.UPLOAD_FILE).sendKeys(fullFileName);
+		
+	}
+	
+	
 	public UserMyProductReviewPageObject openMyProductReviewPage(WebDriver driver) {
 		// TODO Auto-generated method stub
 		waitForElementVisble(driver, BasePageUI.MY_PRODUCT_REVIEW_LINK);
@@ -497,6 +526,7 @@ public class BasePage {
 		
 			
 	}
+	
 	
 	public AdminLoginPageObject clickToLogoutLinkAtAdmin(WebDriver driver) {
 		waitForElementVisble(driver, BasePageUI.ADMIN_LOGOUT_LINK);

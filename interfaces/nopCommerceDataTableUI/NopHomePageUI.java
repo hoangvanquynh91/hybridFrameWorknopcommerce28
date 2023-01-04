@@ -1,4 +1,4 @@
-package PageUIs.JQuery;
+package nopCommerceDataTableUI;
 
 import org.openqa.selenium.WebDriver;
 

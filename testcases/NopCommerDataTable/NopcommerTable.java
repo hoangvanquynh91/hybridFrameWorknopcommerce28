@@ -1,4 +1,4 @@
-package com.jquery.datatable;
+package NopCommerDataTable;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
@@ -6,19 +6,22 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjectJQuery.LoginPageObject;
-import pageObjectJQuery.NopAdminLoginPageObject;
-import pageObjectJQuery.NopHomePageObject;
-import pageObjectJQuery.NopRegisterPageObject;
-import pageObjectJQuery.PageGeneratorManager;
+import nopCommerceDataTable.nopLoginPageObject;
+import nopCommerceDataTable.NopAdminLoginPageObject;
+import nopCommerceDataTable.NopAdminManagerCustomerPageObject;
+import nopCommerceDataTable.NopHomePageObject;
+import nopCommerceDataTable.NopRegisterPageObject;
+import nopCommerceDataTable.PageGeneratorManager;
+
 
 
 public class NopcommerTable extends BaseTest {
 	WebDriver driver;
 	NopHomePageObject nopHomePage;
 	NopRegisterPageObject nopRegisterPage;
-	LoginPageObject nopLoginPage;
+	nopLoginPageObject nopLoginPage;
 	NopAdminLoginPageObject nopAdminLoginPage;
+	NopAdminManagerCustomerPageObject nopAdminManagerCustomerPage;
 	private String firstName = "Nguyen";
 	private String lastName = "Van A";
 	private String emailAddress = "Automation321@gmail.com";
@@ -36,16 +39,19 @@ public class NopcommerTable extends BaseTest {
 	 @Test
 	 public void TC01_Register() {
 		 nopHomePage.clickToMyAccountLink();
-		 nopLoginPage = PageGeneratorManager.getNopLoginPage(driver);
+		 nopLoginPage = PageGeneratorManager.getnopLoginPage(driver);
 		 nopLoginPage.clickToCreateAccountButton();
 		 nopRegisterPage = PageGeneratorManager.getNopRegisterPage(driver);
 		 nopRegisterPage.createAccount(firstName,lastName,emailAddress,password);
 	 }
 	 
-	 public void TC02_Verify_Created_Acoount() {
+	 public void TC02_Verify_Created_Account() {
 		 nopRegisterPage.openAdminPage();
 		 nopAdminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);
 		 nopAdminLoginPage.loginAdminPage(adminUserName,adminPasswrod);
+		 nopAdminManagerCustomerPage = PageGeneratorManager.getAdminManagerCustomerPage(driver);
+		 nopAdminManagerCustomerPage.closePopup();
+		 nopAdminManagerCustomerPage.searchByEmailAddress(emailAddress);
 		 
 		 
 	 }

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="NopCommerce">
-  <parameter name = "url" value = "http://live.techpanda.org/index.php"/>
+  <parameter name = "url" value = "https://blueimp.github.io/jQuery-File-Upload/"/>
   <test name="Run On Edge">
   <parameter name = "browser" value = "edge"/>
     <classes>
-      <class name="com.jquery.datatable.NopcommerTable"/>
+      <class name="com.jquery.datatable.Level_11_Upload_Files"/>
     </classes>
   </test>
+ 
 </suite>

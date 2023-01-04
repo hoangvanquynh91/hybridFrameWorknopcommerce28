@@ -1,4 +1,4 @@
-package pageObjectJQuery;
+package nopCommerceDataTable;
 
 import org.openqa.selenium.WebDriver;
 

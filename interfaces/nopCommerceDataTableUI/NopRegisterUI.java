@@ -1,4 +1,4 @@
-package PageUIs.JQuery;
+package nopCommerceDataTableUI;
 
 public class NopRegisterUI {
 	public static final String LOCATOR_TEXTBOX = "xpath=//input[@id='%s']";

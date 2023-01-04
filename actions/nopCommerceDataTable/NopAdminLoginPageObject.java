@@ -1,9 +1,9 @@
-package pageObjectJQuery;
+package nopCommerceDataTable;
 
 import org.openqa.selenium.WebDriver;
 
-import PageUIs.JQuery.NopAdminPageUI;
 import commons.BasePage;
+import nopCommerceDataTableUI.NopAdminPageUI;
 
 public class NopAdminLoginPageObject extends BasePage {
 	WebDriver driver;
@@ -22,6 +22,5 @@ public class NopAdminLoginPageObject extends BasePage {
 		waitToElementClickable(driver, NopAdminPageUI.LOGIN_BUTTON);
 		clickToElement(driver, NopAdminPageUI.LOGIN_BUTTON);
 	}
-	
 
 }

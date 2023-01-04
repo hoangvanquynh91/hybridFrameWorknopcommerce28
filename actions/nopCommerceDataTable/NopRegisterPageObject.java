@@ -1,10 +1,9 @@
-package pageObjectJQuery;
+package nopCommerceDataTable;
 
 import org.openqa.selenium.WebDriver;
 
-import PageUIs.JQuery.NopAdminPageUI;
-import PageUIs.JQuery.NopRegisterUI;
 import commons.BasePage;
+import nopCommerceDataTableUI.NopRegisterUI;
 
 public class NopRegisterPageObject extends BasePage {
 	WebDriver driver;
