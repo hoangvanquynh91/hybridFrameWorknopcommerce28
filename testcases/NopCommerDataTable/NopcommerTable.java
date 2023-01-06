@@ -1,6 +1,8 @@
 package NopCommerDataTable;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -24,7 +26,7 @@ public class NopcommerTable extends BaseTest {
 	NopAdminManagerCustomerPageObject nopAdminManagerCustomerPage;
 	private String firstName = "Nguyen";
 	private String lastName = "Van A";
-	private String emailAddress = "Automation321@gmail.com";
+	private String emailAddress = "Automation45226@gmail.com";
 	private String password = "123456";
 	private String adminUserName = "user01";
 	private String adminPasswrod = "guru99com";
@@ -44,7 +46,7 @@ public class NopcommerTable extends BaseTest {
 		 nopRegisterPage = PageGeneratorManager.getNopRegisterPage(driver);
 		 nopRegisterPage.createAccount(firstName,lastName,emailAddress,password);
 	 }
-	 
+	 @Test
 	 public void TC02_Verify_Created_Account() {
 		 nopRegisterPage.openAdminPage();
 		 nopAdminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);
@@ -52,8 +54,12 @@ public class NopcommerTable extends BaseTest {
 		 nopAdminManagerCustomerPage = PageGeneratorManager.getAdminManagerCustomerPage(driver);
 		 nopAdminManagerCustomerPage.closePopup();
 		 nopAdminManagerCustomerPage.searchByEmailAddress(emailAddress);
-		 
+		 Assert.assertEquals(emailAddress, nopAdminManagerCustomerPage.getEmailAddressRegisterSuccess());
 		 
 	 }
+	 @AfterClass
+	  public void afterClass() {
+		  driver.quit();
+	  }
 
 }

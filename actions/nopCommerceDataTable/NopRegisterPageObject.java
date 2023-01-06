@@ -25,8 +25,8 @@ public class NopRegisterPageObject extends BasePage {
 		waitForElementVisble(driver, NopRegisterUI.LOCATOR_TEXTBOX,"password");
 		sendkeyToElement(driver, NopRegisterUI.LOCATOR_TEXTBOX, password, "password");
 		
-		waitForElementVisble(driver, NopRegisterUI.LOCATOR_TEXTBOX,"Confirm Password");
-		sendkeyToElement(driver, NopRegisterUI.LOCATOR_TEXTBOX, password, "Confirm Password");
+		waitForElementVisble(driver, NopRegisterUI.LOCATOR_TEXTBOX,"confirmation");
+		sendkeyToElement(driver, NopRegisterUI.LOCATOR_TEXTBOX, password, "confirmation");
 		
 		waitToElementClickable(driver, NopRegisterUI.REGISTER_BUTTON);
 		clickToElement(driver, NopRegisterUI.REGISTER_BUTTON);

@@ -19,15 +19,16 @@ public class NopAdminManagerCustomerPageObject extends BasePage {
 	}
 
 	public void searchByEmailAddress(String emailAddress) {
-		int columIndex = getElementSize(driver, emailAddress) +1;
-		
 		waitForElementVisble(driver, NopAdminManagerCustomerAccountUI.EMAIL_ADDRESS_TEXT_BOX);
 		sendkeyToElement(driver, NopAdminManagerCustomerAccountUI.EMAIL_ADDRESS_TEXT_BOX, emailAddress);
 		
 		waitToElementClickable(driver, NopAdminManagerCustomerAccountUI.SEARCH_BUTTON);
 		clickToElement(driver, NopAdminManagerCustomerAccountUI.SEARCH_BUTTON);
-		
-		
+	}
+	
+	public String getEmailAddressRegisterSuccess() {
+		waitForElementVisble(driver, NopAdminManagerCustomerAccountUI.EMAIL_ADDRESS_REGISTER_SUCCESS);
+		return getElementText(driver, NopAdminManagerCustomerAccountUI.EMAIL_ADDRESS_REGISTER_SUCCESS);
 	}
 	
 
