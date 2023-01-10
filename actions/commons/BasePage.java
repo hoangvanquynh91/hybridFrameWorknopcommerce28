@@ -363,10 +363,7 @@ public class BasePage {
 			return false;
 		}
 	}
-	
-	
-	
-	
+
 	public void waitForElementVisble(WebDriver driver,String locator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver,20);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));

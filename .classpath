@@ -51,5 +51,9 @@
 	<classpathentry kind="lib" path="libWebDriverManager/okio-1.14.0.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/slf4j-api-1.7.36.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/webdrivermanager-5.3.0.jar"/>
+	<classpathentry kind="lib" path="libraries/commons-logging-1.2-src.zip"/>
+	<classpathentry kind="lib" path="libraries/commons-logging-1.2-bin.zip"/>
+	<classpathentry kind="lib" path="libraries/ReportNG.rar"/>
+	<classpathentry kind="lib" path="libraries/commons-logging-1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
